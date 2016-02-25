@@ -1,5 +1,13 @@
+/*
+The CSS code gets to executed from top to bottom and left ro right
+Basic rules to write CSS
+- write GENERAL rules first (for all the paragraph tags in the website for example) and only after that write CSS for SPECIFIC tags (for example the paragraph tags inside the footer)
+- write the css styles to define for the parent (outside) container and THEN the children (inside containers) of that parent and THEN the children (inside containers) of the child above
+*/
+
+
 /* CSS reset
-    (all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
+(all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
 */
 
 * {
@@ -7,300 +15,45 @@
     padding: 0;
     border: 0;
     font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
     box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
 }
 
 
-/* General styles
-    (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
+/* General styles (General Module, wrapping around the modules bellow)
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
-body {
-    background-color: lightgrey;
-    font-size: 16px;
-}
-
-a {
-    color: #838994;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #000;
-}
-
-.content {
-    width: 60%;
-    margin: 0 auto;
-}
-
-ol,
-ul {
-    list-style: outside none none;
-}
+body {}
 
 
-/* Header styles
-    (all the styles inside the < header > or < nav > tags)
-*/
-
-.top-navigation {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    position: fixed;
-    width: 100%;
-    z-index: 9999;
-    opacity: 0.98;
-    top: 0;
-}
-
-.top-navigation .content {
-    height: 70px;
-}
-
-.top-navigation .links {
-    color: #838994;
-    float: right;
-    font-size: 1.04rem;
-    margin-top: 1.7rem;
-    margin-right: 1rem;
-}
-
-.top-navigation .links li {
-    display: inline-block;
-    margin-left: 1.563rem;
-}
-
-.top-navigation .links li.active a {
-    color: #000;
-}
-
-.top-navigation .logo {
-    height: 4.375rem;
-    margin-left: 1rem;
-}
-
-
-/* Content styles
-    (all the styles inside the < sections > or < aside > tags)
-*/
-
-.introduction {
-    background-image: url('../images/first-background.jpg');
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 45.938rem;
-}
-
-.introduction h1,
-.introduction h3 {
-    color: white;
-    font-weight: 300;
-    text-align: center;
-}
-
-.introduction h1 {
-    font-size: 3.125rem;
-    padding-top: 17.5rem;
-}
-
-.introduction h3 {
-    font-size: 1.563rem;
-    margin-top: 1.25rem;
-}
-
-.introduction .buttons {
-    color: white;
-    margin-top: 1.563rem;
-    text-align: center;
-}
-
-.introduction .big-button {
-    background-color: #f15a29;
-    border-color: #f15a29;
-    border-radius: 4px;
-    border-style: none;
-    color: white;
-    font-size: 1.125rem;
-    padding: 1rem 1.5rem;
-    text-shadow: none;
-    width: 9.688rem;
-    text-align: center;
-}
-
-.introduction button:hover {
-    background-color: #d9400e;
-    border-color: #cf3d0e;
-    cursor: pointer;
-}
-
-.cases {
-    background-color: #fff;
-    overflow: hidden;
-    padding-bottom: 5rem;
-}
-
-.cases .content {
-    color: #1d1e21;
-    margin-top: 7.875rem;
-    text-align: center;
-}
-
-.cases h2 {
-    font-size: 2.75rem;
-    font-weight: 300;
-    margin: 1.625rem 0 3.125rem;
-}
-
-.cases .devices > li {
-    float: left;
-    width: 33.3333%;
-}
-
-.cases .devices h3 {
-    font-size: 1.563rem;
-    font-weight: 400;
-    margin: 2.5rem 0 1.875rem;
-}
-
-
-/* Footer styles
-    (all the styles inside the < footer > tag)
-*/
-
-.social {
-    background-color: #fff;
-    overflow: auto;
-    padding-bottom: 9.375rem;
-    text-align: center;
-}
-
-.social hr {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: #eaebec -moz-use-text-color -moz-use-text-color;
-    border-image: none;
-    border-style: solid none none;
-    border-width: 1px 0 0;
-    margin: 1.313rem 0;
-}
-
-.social .copy {
-    color: #838994;
-    font-size: 0.9rem;
-    font-weight: 300;
-}
-
-.social .icons > li {
-    border: 1px solid #eaebec;
-    border-radius: 2.25rem;
-    display: inline-block;
-    height: 2.5rem;
-    margin: 1.25rem 5px;
-    padding: 1.25rem 0 0;
-    text-align: center;
-    width: 3.5rem;
-}
-
-.social .twitter {
-    color: #55acee;
-}
-
-.social .facebook {
-    color: #4c66a4;
-}
-
-.social .instagram {
-    color: #3f729b;
-}
-
-.social .icons > li:hover {
-    cursor: pointer;
-    font-size: 1.1rem;
-    color: #04c2fc;
-}
-
-
-/* Responsive styles
-    (the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+/* Header styles (Main Module)
+(all the styles inside the < header > or < nav > tags)
 */
 
 
-/*ipad lanscape / small laptop*/
-
-@media only screen and (max-width: 1024px) {
-    .content {
-        width: 80%;
-        margin: 0 auto;
-    }
-}
+/* Content styles (Main Module)
+(all the styles inside the < sections > or < aside > tags)
+*/
 
 
-/*ipad potrait*/
-
-@media only screen and (max-width: 768px) {
-    body {
-        font-size: 12px;
-    }
-    .content {
-        width: 99%;
-        margin: 0 auto;
-    }
-    .top-navigation .links {
-        margin-right: 0;
-        width: 80%;
-        font-size: 0.8rem;
-    }
-    .top-navigation .links li {
-        margin-left: 2%;
-    }
-    .cases .devices > li {
-        float: none;
-        width: 99%;
-    }
-}
+/* Footer styles (Main Module)
+(all the styles inside the < footer > tag)
+*/
 
 
-/*iPhone landscape*/
-
-@media only screen and (max-width: 480px) {
-    body {
-        font-size: 10px;
-    }
-    .content {
-        width: 100%;
-        margin: 0 auto;
-    }
-    .top-navigation .links {
-        margin-right: 0;
-        width: 85%;
-        font-size: 0.6rem;
-    }
-    .top-navigation .links li {
-        margin-left: 1%;
-    }
-    .introduction h1 {
-        font-size: 2.125rem;
-    }
-    .introduction h3 {
-        font-size: 1rem;
-    }
-    .cases h2 {
-        font-size: 1rem;
-    }
-    .cases .devices h3 {
-        font-size: 1rem;
-    }
-}
-
-
-/*iPhone portrait*/
-
-@media only screen and (max-width: 320px) {
-    body {
-        font-size: 8px;
-    }
-}
+/*
+place all the desktop styles above this line
+Responsive styles
+(the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+place all the mobile tables styles bellow this line
+*/
