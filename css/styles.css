@@ -33,22 +33,214 @@ Basic rules to write CSS
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
-body {}
+body {
+    background-color: darkgray;
+}
+
+a {
+    color: #838994;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+}
+
+.content {
+    width: 60%;
+    margin: 0 auto;
+}
+
+ol,
+ul {
+    list-style: outside none none;
+}
 
 
 /* Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
 */
 
+.top-navigation {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    opacity: 0.98;
+    top: 0;
+}
+
+.top-navigation > .content {
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.top-navigation .links {
+    float: right;
+    font-family: 'Roboto', sans-serif;
+    color: #838994;
+    font-size: 1.04rem;
+    margin-top: 2.7rem;
+    margin-right: 1rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.top-navigation .links li {
+    display: inline-block;
+    margin-left: 1.563rem;
+}
+
+.top-navigation .links li.active a {
+    color: #000;
+}
+
+.top-navigation .links li:hover {
+    cursor: pointer;
+    color: #333333;
+}
+
+.top-navigation .logo {
+    height: 4.375rem;
+    margin-left: 1rem;
+}
+
 
 /* Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
+.introduction {
+    background-image: url('../images/first-background.jpg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45.938rem;
+}
+
+.introduction h1,
+.introduction h3 {
+    color: white;
+    font-weight: 300;
+    text-align: center;
+}
+
+.introduction h1 {
+    font-size: 3.125rem;
+    padding-top: 17.5rem;
+}
+
+.introduction h3 {
+    font-size: 1.563rem;
+    margin-top: 1.25rem;
+}
+
+.introduction .buttons {
+    color: white;
+    margin-top: 1.563rem;
+    text-align: center;
+}
+
+.introduction .big-button {
+    background-color: #f15a29;
+    border-color: #f15a29;
+    border-radius: 4px;
+    border-style: none;
+    color: white;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    text-shadow: none;
+    width: 9.688rem;
+    text-align: center;
+}
+
+.cases {
+    background-color: #fff;
+    overflow: hidden;
+    padding-bottom: 5rem;
+}
+
+.cases .content {
+    color: #1d1e21;
+    margin-top: 7.875rem;
+    text-align: center;
+}
+
+.cases h2 {
+    font-size: 2.75rem;
+    font-weight: 300;
+    margin: 1.625rem 0 3.125rem;
+}
+
+.cases .devices > li {
+    float: left;
+    width: 33.3333%;
+}
+
+.cases .devices h3 {
+    font-size: 1.563rem;
+    font-weight: 400;
+    margin: 2.5rem 0 1.875rem;
+}
+
 
 /* Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
+
+.social {
+    background-color: #fff;
+    overflow: auto;
+    padding-bottom: 9.375rem;
+    text-align: center;
+}
+
+.social hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #eaebec -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    margin: 1.313rem 0;
+}
+
+.social .copy {
+    color: #838994;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.social .icons > li {
+    border: 1px solid #eaebec;
+    border-radius: 2.25rem;
+    display: inline-block;
+    height: 3.5rem;
+    margin: 1.25rem 5px;
+    padding: 1.25rem 0 0;
+    text-align: center;
+    width: 3.5rem;
+}
+
+.social .twitter {
+    color: #55acee;
+}
+
+.social .facebook {
+    color: #4c66a4;
+}
+
+.social .instagram {
+    color: #3f729b;
+}
+
+.social .icons > li:hover {
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #04c2fc;
+}
 
 
 /*
@@ -57,3 +249,73 @@ Responsive styles
 (the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
 place all the mobile tables styles bellow this line
 */
+
+
+/*ipad lanscape / small laptop*/
+
+@media only screen and (max-width: 1024px) {
+    /* acting like an IF statement, the media query is a set of conditions in which the containing css will be applied
+    for example the statament above says: IF the media on which this CSS is going to used is SCREEN (Mobiles, Tables, Laptops, Desktops or Projectors) and the maximum resolution of that device is 1024px, THEN apply the body color blue for all the text
+    */
+    body {
+        color: blue;
+    }
+}
+
+
+/*ipad potrait*/
+
+@media only screen and (max-width: 768px) {
+    body {
+        color: red;
+    }
+    .top-navigation .content {
+        width: 99%
+    }
+    .top-navigation .links li {
+        margin-left: 0.4rem;
+    }
+    .introduction {
+        height: 35.938rem;
+    }
+    .introduction h1 {
+        font-size: 2.125rem;
+    }
+    .introduction h3 {
+        font-size: 1.1rem;
+    }
+    .cases .content {
+        margin-top: 4.875rem;
+    }
+    .cases h2 {
+        font-size: 1.8rem;
+    }
+    .cases .devices > li {
+        float: none;
+        width: 99%;
+    }
+}
+
+
+/*iPhone landscape*/
+
+@media only screen and (max-width: 480px) {
+    body {
+        color: green;
+    }
+    .top-navigation .links {
+        font-size: 0.8rem;
+    }
+    .introduction h1 {
+        padding-top: 12.5rem;
+    }
+}
+
+
+/*iPhone portrait*/
+
+@media only screen and (max-width: 320px) {
+    body {
+        color: purple;
+    }
+}
